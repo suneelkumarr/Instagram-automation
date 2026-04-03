@@ -80,7 +80,7 @@ const sendInstagramDM = async (
     body: JSON.stringify(payload),
   });
 
-  const data = await response.json();
+  const data: { error?: { message?: string }; message_id?: string } = await response.json();
   if (!response.ok) {
     throw new Error(data.error?.message || 'Failed to send message');
   }

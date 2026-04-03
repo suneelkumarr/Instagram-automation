@@ -19,7 +19,8 @@
       "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\worker\\\\src\")",
       "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\api\\\\src\\\\controllers\")",
       "Bash(sed -i '' '296,297d' \"D:/rsushop.com/apps/api/src/controllers/instagramController.ts\")",
-      "Bash(sed -i '296,297d' \"D:/rsushop.com/apps/api/src/controllers/instagramController.ts\")"
+      "Bash(sed -i '296,297d' \"D:/rsushop.com/apps/api/src/controllers/instagramController.ts\")",
+      "Bash(npm run:*)"
     ]
   }
 }

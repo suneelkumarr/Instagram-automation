@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"app\\\\dashboard\\\\flows\\\\page.tsx -> @/components/FlowBuilder":{"id":5776,"files":["static/css/a275cc2b185e04f8.css","static/chunks/eb0351e1.f7e905774951ca72.js","static/chunks/321.d3ff4f50efa69ad6.js","static/chunks/776.4b111e65abd9ed30.js"]}}';

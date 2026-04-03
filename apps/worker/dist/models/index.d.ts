@@ -1,0 +1,11 @@
+import mongoose from 'mongoose';
+export declare const User: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Workspace: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const InstagramAccount: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Automation: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Contact: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Conversation: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const Message: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const FlowExecution: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const WebhookLog: mongoose.Model<any, {}, {}, {}, any, any>;
+export declare const AnalyticsEvent: mongoose.Model<any, {}, {}, {}, any, any>;

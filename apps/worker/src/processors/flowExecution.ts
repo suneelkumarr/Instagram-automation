@@ -203,7 +203,7 @@ export const createFlowExecutionWorker = () => {
                 // Fetch the list of followers for the business account
                 const followersUrl = `${config.instagram.graphApiBase}/${config.instagram.apiVersion}/${igUserId}/followers?access_token=${accessToken}`;
                 const followersResponse = await fetch(followersUrl);
-                const followersData = await followersResponse.json();
+                const followersData: { data?: Array<{ id: string }>; error?: { code?: number } } = await followersResponse.json();
 
                 if (followersResponse.ok && followersData.data) {
                   const isFollowing = followersData.data.some(
