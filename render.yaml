@@ -1,0 +1,27 @@
+# RsuShop — Render Blueprint
+# Deploy with: render blueprint create
+# Docs: https://render.com/docs/blueprint-spec
+
+imports:
+  - path: apps/api/render.yaml
+  - path: apps/worker/render.yaml
+
+# Optional: Render Redis (for BullMQ)
+# Create via dashboard or uncomment below
+# redis:
+#   name: rsushop-redis
+#   plan: starter
+#   ipAllowList: []
+#   redisVersion: "7"
+
+# Optional: Cron Job for scheduled automations
+# Uncomment if you need to poll for scheduled triggers
+# cron:
+#   name: rsushop-cron
+#   schedule: "*/5 * * * *"
+#   buildCommand: "npm run build"
+#   startCommand: "node dist/cron.js"
+#   regions:
+#     - oregon
+#   envVars:
+#     - fromGroup: rsushop-env

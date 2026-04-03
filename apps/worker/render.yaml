@@ -1,0 +1,42 @@
+# RsuShop Worker — Render Blueprint
+# This file defines the background worker service on Render
+# Workers process: DM sending, AI responses, webhook handling, flow execution
+
+services:
+  - type: worker
+    name: rsushop-worker
+    plan: starter
+    region: oregon
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      # ===== REQUIRED ENVIRONMENT VARIABLES =====
+
+      - key: NODE_ENV
+        value: production
+
+      # ===== MONGODB =====
+      - key: MONGODB_URI
+        sync: false
+        # Example: mongodb+srv://username:password@cluster.mongodb.net/rsushop?retryWrites=true&w=majority
+
+      # ===== REDIS =====
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: 6379
+      - key: REDIS_PASSWORD
+        sync: false
+      # Option 2: Upstash Redis
+      # - key: REDIS_URL
+      #   value: redis://default:xxx@xxx.upstash.io:6379
+
+      # ===== META / INSTAGRAM =====
+      - key: META_APP_ID
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+
+      # ===== OPENAI =====
+      - key: OPENAI_API_KEY
+        sync: false

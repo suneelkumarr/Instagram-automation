@@ -1,0 +1,89 @@
+# RsuShop API — Render Blueprint
+# This file defines the API web service on Render
+
+services:
+  - type: web
+    name: rsushop-api
+    plan: starter
+    region: oregon
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health
+    envVars:
+      # ===== REQUIRED ENVIRONMENT VARIABLES =====
+      # Set these in Render Dashboard → Environment
+
+      - key: NODE_ENV
+        value: production
+
+      - key: PORT
+        value: 3001
+
+      # ===== MONGODB =====
+      # Use MongoDB Atlas (or Render's managed MongoDB if available)
+      # Get your connection string from MongoDB Atlas → Connect → Connect your application
+      - key: MONGODB_URI
+        sync: false
+        # Example: mongodb+srv://username:password@cluster.mongodb.net/rsushop?retryWrites=true&w=majority
+
+      # ===== REDIS =====
+      # Option 1: Render Managed Redis (create via dashboard)
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: 6379
+      - key: REDIS_PASSWORD
+        sync: false
+      # Option 2: Upstash Redis (free tier available at upstash.com)
+      # - key: REDIS_URL
+      #   value: redis://default:xxx@xxx.upstash.io:6379
+
+      # ===== AUTH =====
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: ENCRYPTION_SECRET
+        generateValue: true
+
+      # ===== META / INSTAGRAM =====
+      # Create app at https://developers.facebook.com
+      - key: META_APP_ID
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+
+      # Webhook URL (your Render API URL + /api/v1/webhooks/instagram/)
+      # After deploying, set this to your Render URL
+      # Example: https://rsushop-api.onrender.com/api/v1/webhooks/instagram/
+      - key: WEBHOOK_BASE_URL
+        sync: false
+
+      # ===== OPENAI =====
+      # Get from https://platform.openai.com/api-keys
+      - key: OPENAI_API_KEY
+        sync: false
+
+      # ===== STRIPE =====
+      # Get from https://dashboard.stripe.com/apikeys
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PRICE_STARTER
+        sync: false
+      - key: STRIPE_PRICE_PRO
+        sync: false
+      - key: STRIPE_PRICE_AGENCY
+        sync: false
+
+      # ===== CORS =====
+      - key: CORS_ORIGIN
+        # Update this with your frontend URL after deployment
+        value: "http://localhost:3000"
+
+      # ===== RATE LIMITING =====
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX
+        value: 100

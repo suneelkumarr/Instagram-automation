@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(npm audit:*)",
+      "Bash(node -e ':*)",
+      "Bash(nslookup cluster0.etxjfn3.mongodb.net)",
+      "Bash(ping -n 1 google.com)",
+      "Bash(nslookup cluster0.etxjfn3.mongodb.net 8.8.8.8)",
+      "Bash(node -e \"const dns = require\\('dns'\\); dns.resolve4\\('cluster0.etxjfn3.mongodb.net', \\(e,a\\) => console.log\\(e ? e.message : a\\)\\)\")",
+      "Bash(curl -s https://api.ipify.org)",
+      "Bash(curl -s -X POST http://localhost:3001/api/v1/ai/generate-reply -H 'Content-Type: application/json' -d '{\"message\":\"hello\",\"brandName\":\"test\",\"niche\":\"default\"}')",
+      "Bash(node --env-file=.env -e ':*)",
+      "Bash(npx tsx -e ':*)",
+      "Bash(npx tsx:*)",
+      "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\api\\\\src\\\\routes\")",
+      "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\api\\\\src\")",
+      "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\worker\\\\src\")",
+      "Bash(dir \"D:\\\\rsushop.com\\\\apps\\\\api\\\\src\\\\controllers\")",
+      "Bash(sed -i '' '296,297d' \"D:/rsushop.com/apps/api/src/controllers/instagramController.ts\")",
+      "Bash(sed -i '296,297d' \"D:/rsushop.com/apps/api/src/controllers/instagramController.ts\")"
+    ]
+  }
+}
